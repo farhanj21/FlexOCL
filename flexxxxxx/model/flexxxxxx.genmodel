@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/flexxxxxx/src-gen" creationIcons="false" editDirectory="/flexxxxxx.edit/src-gen"
+    editorDirectory="/flexxxxxx.editor/src-gen" modelPluginID="flexxxxxx" modelName="Flexxxxxx"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>flexxxxxx.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Flexxxxxx" disposableProviderFactory="true" ecorePackage="flexxxxxx.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flexxxxxx.ecore#//Title">
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Title/Spring"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Title/Fall"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Title/Summer"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flexxxxxx.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Type/BS"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Type/MS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flexxxxxx.ecore#//Finances">
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Finances/wealthy"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Finances/indigent"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flexxxxxx.ecore#//Grade">
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/A"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/B"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/C"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/D"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/E"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Grade/F"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="flexxxxxx.ecore#//Paper">
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Paper/board"/>
+      <genEnumLiterals ecoreEnumLiteral="flexxxxxx.ecore#//Paper/NU%20test"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="flexxxxxx.ecore#//List%20%3CSemester%3E"/>
+    <genDataTypes ecoreDataType="flexxxxxx.ecore#//List%20%3CCourse%3E"/>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Approval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Approval/approvalReq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Approval/approvalAcquired"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Loan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/eligible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/renewalCriteriaMet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/assistanceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/repaymentStartDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/repaymentEndDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Loan/renewedEverySemester"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Scholarship">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Scholarship/offered"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Scholarship/awarded"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Scholarship/coverage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Scholarship/numOfSems"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Aid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Aid/amount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Aid/applicable"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Fee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Fee/amount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Fee/refund"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Fee/paid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Fee/paymentMethod"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Exam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Exam/examEligible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Exam/type"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Finance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Finance/type"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Campus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Campus/loc"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Graduate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Graduate/date"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Job">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Job/startDate"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Info">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/withdrawn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/dropped"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/grade"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/gpa"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Info/passed"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Course">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/announcedDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/semester"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/creditHours"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Course/repeatCount"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flexxxxxx.ecore#//Course/offeredBy"/>
+      <genOperations ecoreOperation="flexxxxxx.ecore#//Course/Register%20(studentId%3Aint%2C%20courseCode%3A%20String)%20%3A%20void"/>
+      <genOperations ecoreOperation="flexxxxxx.ecore#//Course/Drop%20(studentId%3Aint%2C%20courseCode%3A%20String)%20%3A%20void"/>
+      <genOperations ecoreOperation="flexxxxxx.ecore#//Course/Withdraw%20(studentId%3Aint%2C%20courseCode%3A%20String)%20%3A%20void"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Transcript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Transcript/data"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference flexxxxxx.ecore#//Transcript/has"/>
+    </genClasses>
+    <genClasses ecoreClass="flexxxxxx.ecore#//Department">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Department/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Department/HOD"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute flexxxxxx.ecore#//Department/courses"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

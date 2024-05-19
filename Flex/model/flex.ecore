@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flexModule" nsURI="http://www.example.org/flexModule" nsPrefix="flexModule">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+    <details key="ecore.xml.type" value="http://www.eclipse.org/emf/2003/XMLType"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="University" eSuperTypes="#//Semester">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ranking" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Semester">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SemesterSeason"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SemesterSeason" value="self.title = Title::Fall or self.title = Title::Spring or self.title = Title::Summer"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="#//Title"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feeDueDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Degree">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="warningCount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="admissionCancel" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minCGPA" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="warning" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Student">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="CoreCoursesTaken"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="CoreCoursesTaken" value="self.coreCourses->forAll(course | self.enrolledCourses->includes(course))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rollNumber" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CNIC" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CGPA" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SGPA" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesters" eType="#//List%20%3CSemester%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enrolledCourses" eType="#//List%20%3CCourse%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coreCourses" eType="#//List%20%3CCourse%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desiredRepeatCourses" eType="#//List%20%3CCourse%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="failedCourses" eType="#//List%20%3CCourse%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeatCourses" eType="#//List%20%3CCourse%3E"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="realNeedofAssistance" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enrolls" eType="#//University"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//Degree"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acquires" eType="#//Approval"
+        changeable="false" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cantake" eType="#//Loan"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isAwarded" eType="#//Scholarship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="takes" eType="#//Aid"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//Fee"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gives" eType="#//Exam"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//Finance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graduates" eType="#//Graduate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gets" eType="#//Job"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studiedBy" eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Approval">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="approvalReq" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="approvalAcquired" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eligible" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="renewalCriteriaMet" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assistanceType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repaymentStartDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repaymentEndDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="renewedEverySemester" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scholarship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offered" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="awarded" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coverage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numOfSems" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Aid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicable" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fee">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refund" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentMethod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Exam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="examEligible" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Paper"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Finance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Finances"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Campus" eSuperTypes="#//University">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Graduate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Job">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Info">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="withdrawn" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dropped" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grade" eType="#//Grade"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpa" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Double"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="passed" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Course" eSuperTypes="#//Info">
+    <eOperations name="Register (studentId:int, courseCode: String) : void"/>
+    <eOperations name="Drop (studentId:int, courseCode: String) : void"/>
+    <eOperations name="Withdraw (studentId:int, courseCode: String) : void"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="announcedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semester" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creditHours" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeatCount" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offeredBy" eType="#//Department"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transcript">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="has" eType="#//Course"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Department">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="HOD" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courses" eType="#//List%20%3CCourse%3E"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Title">
+    <eLiterals name="Spring"/>
+    <eLiterals name="Fall" value="1"/>
+    <eLiterals name="Summer" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="BS"/>
+    <eLiterals name="MS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Finances">
+    <eLiterals name="wealthy"/>
+    <eLiterals name="indigent" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Grade">
+    <eLiterals name="A"/>
+    <eLiterals name="B" value="1"/>
+    <eLiterals name="C" value="1"/>
+    <eLiterals name="D" value="1"/>
+    <eLiterals name="E" value="1"/>
+    <eLiterals name="F" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Paper">
+    <eLiterals name="board"/>
+    <eLiterals name="NU test" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="List &lt;Semester>" instanceClassName="org.eclipse.emf.common.util.EList"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="List &lt;Course>" instanceClassName="org.eclipse.emf.common.util.EList"/>
+</ecore:EPackage>
