@@ -7,8 +7,15 @@ This repository contains the implementation of the Flex portal using the Ecore M
 
 ## Class Diagrams
 Two class diagrams are provided:
-- Ecore Class Diagram: Created from scratch using the Ecore Modeling Framework in Eclipse.
-- Lucidchart Class Diagram: Created in Lucidchart
+
+**- Ecore Class Diagram: Created from scratch using the Ecore Modeling Framework in Eclipse.**
+
+  ![image](https://github.com/farhanj21/FlexOCL/assets/102750756/fe3ec6bd-10a2-4ea8-940e-a2a96860000a)
+  
+**- Lucidchart Class Diagram: Created in Lucidchart**
+
+ ![image](https://github.com/farhanj21/FlexOCL/assets/102750756/93288133-4e8b-49db-8f88-6b7fa7ff89f2)
+
 
 ## OCL Invariants
 The invariants are provided in two formats:
